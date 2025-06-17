@@ -75,6 +75,8 @@ public abstract class ExplosionMixin {
         if(originSpeed < 3.6) return  1.8 + originSpeed;
         return 1.5 * originSpeed;
     }
+    @Unique
+    private Explosion asExplosion() { return (Explosion) (Object)this; }
 
     @Inject(
             method = "collectBlocksAndDamageEntities",
@@ -95,7 +97,7 @@ public abstract class ExplosionMixin {
         List<Entity> list = this.world().getOtherEntities(this.entity(), new Box(minX, minY, minZ, maxX, maxY, maxZ));
         for (int v = 0; v < list.size(); v++) {
             Entity instance = list.get(v);
-            if(!instance.isImmuneToExplosion() && !(instance instanceof FireballEntity)) {
+            if(!instance.isImmuneToExplosion(asExplosion()) && !(instance instanceof FireballEntity)) {
                 Vec3d playerPos = instance.getPos().add(0, 1, 0);
                 Vec3d diff = playerPos.add(explosionPos.multiply(-1));
                 Vec3d originSpeed = instance.getVelocity();

@@ -33,8 +33,8 @@ public class FireballBoom implements ModInitializer {
 	}
 	public static void summonFireballFromDispenser(BlockPointer blockSource, ItemStack itemStack){
 		if(!itemStack.isOf(Items.FIRE_CHARGE)) return;
-		World level = blockSource.getWorld();
-		Direction direction = blockSource.getBlockState().get(DispenserBlock.FACING);
+		World level = blockSource.world();
+		Direction direction = blockSource.state().get(DispenserBlock.FACING);
 		Position spawnPos = DispenserBlock.getOutputLocation(blockSource);
 		FireballEntity fireball = new FireballEntity(EntityType.FIREBALL,level);
 		fireball.setOwner(fireball);
