@@ -16,14 +16,10 @@
 	"environment": "*",
 	"entrypoints": {
 		"client": [
-			{
-				"value": "name.fireballboom.PacketReceiver"
-			}
+			"name.fireballboom.PacketReceiver"
 		],
 		"main": [
-			{
-				"value": "name.fireballboom.FireballBoom"
-			}
+			"name.fireballboom.FireballBoom"
 		]
 	},
 	"mixins": [
@@ -33,7 +29,7 @@
 		"fabricloader": ">=0.16.14",
 		"minecraft": "~1.18.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric": "*"
 	},
 	"suggests": {
 		"another-mod": "*"

@@ -84,7 +84,7 @@ public abstract class ExplosionMixin {
     void changeExplosionKnockBack(CallbackInfo ci){
         if(!(entity() instanceof FireballEntity)) return;
         Vec3d explosionPos = new Vec3d(x(), y(), z());
-        world().emitGameEvent(this.entity(), GameEvent.EXPLODE, explosionPos);
+        world().emitGameEvent(GameEvent.EXPLODE,entity());
         float radius = 7f;
         int minX = floor(this.x() - radius - 1.0);
         int maxX = floor(this.x() + radius + 1.0);
