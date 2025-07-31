@@ -3,9 +3,9 @@
   "package": "name.fireballboom.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "AbstractHurtingProjectileMixin",
+    "ExplosiveProjectileEntityMixin",
     "DispenserBlockMixin",
-    "ExplosionMixin",
+    "ExplosionImplMixin",
     "FireChargeItemMixin",
     "ItemMixin"
   ],
